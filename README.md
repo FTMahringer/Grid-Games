@@ -20,7 +20,7 @@ How to use and create your own grid-games.
 - Made it, so the grid is optimized and cells are generated using double for-loops, for easier "cell-finding".
 - Grids can be easily managed and expanded.
 - To create a grid, use this templte for your own:
-[Documentation](https://ftmahringer/Grid-Games/)
+[Grid-Template](https://FTMahringer/Grid-Games/blob/master/Grid-Template.md)
 
 **Cells:**
 - Made it, so that new cell classes can be easily made with the interface ICell:
