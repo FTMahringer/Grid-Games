@@ -1,5 +1,17 @@
 # Cell-Template
 
+*I know its nothing much, but thats just a empty cell, you need to implement everything else yourself.*
+```
+public class Cell {
+    public Cell(int x, int y, boolean isBomb) {
+        this.setPrefWidth(50);
+        this.setPrefHeight(50);
+    }
+}
+```
+
+
+**Used for Minesweeper**
 ```
 public class Cell extends ACellButton {
     private final boolean isBomb;
