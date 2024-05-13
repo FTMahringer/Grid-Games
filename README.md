@@ -37,6 +37,8 @@ public interface ICell {
     - The ACellButton just extends the Button class and each cell acts just as a Button 
         - *Has been made for Minesweeper*
         - But can be used for many other things.
+- To create a cell, use this template for your own game:
+[Cell-Templates](https://FTMahringer/Grid-Games/blob/master/Cell-Template.md)
 
 ## Tech Stack
 
