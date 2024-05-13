@@ -7,7 +7,6 @@ import javafx.scene.layout.GridPane;
 public class GridField extends GridPane implements IGrid {
     private final Cell[][] cells;
 
-
     public GridField(int width, int height) {
         cells = new Cell[width][height];
         for (int x = 0; x < width; x++) {

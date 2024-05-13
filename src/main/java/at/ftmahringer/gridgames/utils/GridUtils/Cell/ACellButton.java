@@ -35,16 +35,6 @@ public abstract class ACellButton extends Button implements ICell {
         return value;
     }
 
-
-    public void setTextMessage(String text) {
-        this.setText(text);
-    }
-
-    public String getTextMessage() {
-        return this.getText();
-    }
-
-
     public void setColor(Color color) {
         this.setStyle("-fx-background-color: " + color.toString().replace("0x", "#") + ";");
     }
