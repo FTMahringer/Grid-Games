@@ -93,14 +93,13 @@ public class Grid extends GridPane implements IGrid {
                             if (cells[i][j].getBombsAround() == 0) {
                                 cells[i][j].setColor(Color.LIGHTGRAY);
                                 cells[i][j].setOpen(true);
-                                openCells.add(cells[i][j]);
                                 openCell(cells[i][j]);
                             } else  {
                                 cells[i][j].setText(cells[i][j].getBombsAround() + "");
                                 cells[i][j].setColor(Color.DARKGRAY);
                                 cells[i][j].setOpen(true);
-                                openCells.add(cells[i][j]);
                             }
+                            openCells.add(cells[i][j]);
                         }
                     }
                 }
@@ -125,14 +124,13 @@ public class Grid extends GridPane implements IGrid {
                                     if (cells[i][j].getBombsAround() == 0) {
                                         cells[i][j].setColor(Color.LIGHTGRAY);
                                         cells[i][j].setOpen(true);
-                                        openCells.add(cells[i][j]);
                                         openCell(cells[i][j]);
                                     } else {
                                         cells[i][j].setText(cells[i][j].getBombsAround() + "");
                                         cells[i][j].setColor(Color.DARKGRAY);
                                         cells[i][j].setOpen(true);
-                                        openCells.add(cells[i][j]);
                                     }
+                                    openCells.add(cells[i][j]);
                                 }
                             }
                         }
@@ -143,10 +141,21 @@ public class Grid extends GridPane implements IGrid {
             cells[x][y].setOpen(true);
             cell.setText(cell.getBombsAround() + "");
             cell.setColor(Color.DARKGRAY);
+            openCells.add(cell);
         }
     }
 
     public List<Cell> getOpenCells() {
         return openCells;
+    }
+
+    public void toggleFlag(Cell cell) {
+        if (cell.isFlagged()) {
+            Controller.flaggedCells.remove(cell);
+            cell.toggleFlag();
+        } else {
+            Controller.flaggedCells.add(cell);
+            cell.toggleFlag();
+        }
     }
 }

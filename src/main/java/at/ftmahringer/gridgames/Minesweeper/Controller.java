@@ -9,7 +9,7 @@ import java.util.List;
 public class Controller extends Parent {
     static Grid grid;
     static List<Cell> openCells;
-    static List<Cell> flaggedCells;
+    static List<Cell> flaggedCells = new java.util.ArrayList<>();
 
     public Controller(int width, int height, int bombsPercent) {
         startGame(width, height, bombsPercent);
@@ -61,7 +61,8 @@ public class Controller extends Parent {
     private void clickedCell(MouseEvent e, Cell cell) {
 
         if (e.getButton() == javafx.scene.input.MouseButton.SECONDARY) {
-            cell.toggleFlag();
+            grid.toggleFlag(cell);
+            checkWin();
             return;
         }
 
@@ -70,6 +71,7 @@ public class Controller extends Parent {
         }
         if (cell.isOpen()) {
             grid.openAroundOpenCell(cell);
+            checkWin();
             return;
         }
 
@@ -79,15 +81,16 @@ public class Controller extends Parent {
             } else {
                 grid.openCell(cell);
             }
+            checkWin();
         }
-        checkWin();
     }
 
     private void checkWin() {
         int bombs = grid.getBombsAmount();
         openCells = grid.getOpenCells();
+        int gridCellsAmount = grid.cells.length * grid.cells[0].length;
 
-        if (openCells.size() == (grid.cells.length * grid.cells[0].length) - bombs) {
+        if (gridCellsAmount == openCells.size() + flaggedCells.size()) {
             System.out.println("You won!");
             endGame(WonState.WON);
         }

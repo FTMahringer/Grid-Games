@@ -11,7 +11,7 @@ public class Starter extends Application {
     @Override
     public void start(javafx.stage.Stage primaryStage) {
         primaryStage.setTitle("Tic Tac Toe");
-        gameController = new Controller(10, 10, 10);
+        gameController = new Controller(10, 10, 2);
         primaryStage.setScene(new Scene(gameController));
         primaryStage.show();
     }
