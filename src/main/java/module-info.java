@@ -21,8 +21,16 @@ module at.ftmahringer.gridgames {
     exports at.ftmahringer.gridgames.TicTacToe;
     opens at.ftmahringer.gridgames.Minesweeper to javafx.fxml;
     exports at.ftmahringer.gridgames.Minesweeper;
-    exports at.ftmahringer.gridgames.utils.GridUtils.Cell;
     opens at.ftmahringer.gridgames.utils.GridUtils.Cell to javafx.fxml;
+    exports at.ftmahringer.gridgames.utils.GridUtils.Cell;
+    opens at.ftmahringer.gridgames.Chess to javafx.fxml;
+    exports at.ftmahringer.gridgames.Chess;
+    opens at.ftmahringer.gridgames.Chess.Grid to javafx.fxml;
+    exports at.ftmahringer.gridgames.Chess.Grid;
+    opens at.ftmahringer.gridgames.Chess.Pieces to javafx.fxml;
+    exports at.ftmahringer.gridgames.Chess.Pieces;
+    exports at.ftmahringer.gridgames.Chess.Pieces.Types;
+    opens at.ftmahringer.gridgames.Chess.Pieces.Types to javafx.fxml;
 
 
 }
