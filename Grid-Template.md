@@ -1,12 +1,9 @@
-package at.ftmahringer.gridgames.utils.GridUtils;
+# Template
 
-import at.ftmahringer.gridgames.utils.GridUtils.Cell.Cell;
-import at.ftmahringer.gridgames.utils.GridUtils.Cell.ICell;
-import javafx.scene.layout.GridPane;
-
+```
 public class GridField extends GridPane implements IGrid {
     private final Cell[][] cells;
-
+    
     public GridField(int width, int height) {
         cells = new Cell[width][height];
         for (int x = 0; x < width; x++) {
@@ -37,3 +34,4 @@ public class GridField extends GridPane implements IGrid {
         setVgap(i);
     }
 }
+```
